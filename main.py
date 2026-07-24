@@ -1,6 +1,7 @@
 from src.Data_loader import DataLoader
 from src.Center import Center
 from src.Covariance import Covariance
+from src.EigenSolver import EigenSolver
 
 
 def main():
@@ -19,6 +20,11 @@ def main():
     C = cov.compute(B)
     cov.check_symmetry(C)
     cov.get_shape(C)
+
+    print("\n=== Step 5: Eigen decomposition ===")
+    solver = EigenSolver()
+    eigenvalues, eigenvectors = solver.solveEigen(C)
+    solver.verify_orthogonality()
 
 
 if __name__ == '__main__':
