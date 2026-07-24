@@ -11,7 +11,7 @@ class Center:
         B = X - self.mean_vector  # centeralization
         return B
 
-    def verify_centering(self, B, telorance):
+    def verify_centering(self, B, telorance=1e-8):
         col_means = np.mean(B, axis=0)
         max_mean = np.max(np.abs(col_means))
         is_centered = max_mean < telorance
