@@ -18,6 +18,7 @@ def main():
     cov = Covariance()
     C = cov.compute(B)
     cov.check_symmetry(C)
+    cov.get_shape(C)
 
 
 if __name__ == '__main__':

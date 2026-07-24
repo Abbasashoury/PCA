@@ -13,3 +13,6 @@ class Covariance:
     def check_symmetry(self, C, telorance):
         is_symmetric = np.allclose(C, C.T, atol=telorance)
         print(f"Symmetric: {is_symmetric}")
+
+    def get_shape(self, C):
+        print(f"C shape: {C.shape}")
