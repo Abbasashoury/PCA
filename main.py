@@ -1,5 +1,5 @@
 from src.Data_loader import DataLoader
-from src.Center import center
+from src.Center import Center
 
 
 def main():
@@ -9,9 +9,9 @@ def main():
     loader.get_info()
 
     print("\n=== Step 2: Center data ===")
-    Center = center()
-    B = Center.center(X)
-    Center.verify_centering(B)
+    center = Center()
+    B = center.center(X)
+    center.verify_centering(B)
 
 
 if __name__ == '__main__':
