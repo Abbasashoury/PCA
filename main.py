@@ -1,5 +1,6 @@
 from src.Data_loader import DataLoader
 from src.Center import Center
+from src.Covariance import Covariance
 
 
 def main():
@@ -12,6 +13,11 @@ def main():
     center = Center()
     B = center.center(X)
     center.verify_centering(B)
+
+    print("\n=== Step 3:Covariance matrix ====")
+    cov = Covariance()
+    C = cov.compute(B)
+    cov.check_symmetry(C)
 
 
 if __name__ == '__main__':
