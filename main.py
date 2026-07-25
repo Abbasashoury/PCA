@@ -16,7 +16,7 @@ def main():
     B = center.center(X)
     center.verify_centering(B)
 
-    print("\n=== Step 3:Covariance matrix ====")
+    print("\n=== Step 3: Covariance matrix ===")
     cov = Covariance()
     C = cov.computeCovariance(B)
     cov.check_symmetry(C)
@@ -27,12 +27,12 @@ def main():
     eigenvalues, eigenvectors = solver.solveEigen(C)
     solver.verify_orthogonality()
 
-    print("\n=== Step 6 :Explained variance == =")
+    print("\n=== Step 6: Explained variance ===")
     pca = PCA(components=10)
     rel_variance, cum_variance = pca.compute_variance(eigenvalues)
     k90 = pca.find_k_component(target=0.90)
 
-    print("\n=== Step 7:Dimensionality reduction ===")
+    print("\n=== Step 7: Dimensionality reduction ===")
     W1 = pca.projection_matrix(eigenvectors, k=k90)
     T1 = pca.transform(B)
     print(f"T shape: {T1.shape}")
