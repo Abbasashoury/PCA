@@ -32,6 +32,16 @@ def main():
     rel_variance, cum_variance = pca.compute_variance(eigenvalues)
     k90 = pca.find_k_component(target=0.90)
 
+    print("\n=== Step 7:Dimensionality reduction ===")
+    W1 = pca.projection_matrix(eigenvectors, k=k90)
+    T1 = pca.transform(B)
+    print(f"T shape: {T1.shape}")
+
+    print("\n=== Step 8: 2D visualization ===")
+    W2 = pca.projection_matrix(eigenvectors, k=2)
+    T2 = pca.transform(B)
+    print(f"T shape: {T2.shape}")
+
 
 if __name__ == '__main__':
     main()
