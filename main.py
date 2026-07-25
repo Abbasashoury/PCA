@@ -1,4 +1,4 @@
-from src.Data_loader import DataLoader
+from src.DataLoader import dataLoader
 from src.Center import Center
 from src.Covariance import Covariance
 from src.EigenSolver import EigenSolver
@@ -6,7 +6,7 @@ from src.EigenSolver import EigenSolver
 
 def main():
     print("=== Step 1: Load data ===")
-    loader = DataLoader()
+    loader = dataLoader()
     X, t = loader.load()
     loader.get_info()
 

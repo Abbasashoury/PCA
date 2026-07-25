@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.datasets import load_digits
 
-class DataLoader:
+class dataLoader:
     """
     step 1
     data loading...
