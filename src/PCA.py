@@ -20,3 +20,7 @@ class PCA:
         k = int(np.searchsorted(self.cumulative_variance, target) + 1)
         print(f"Components need for {target * 100}% variance: {k}")
         return k
+
+    def projection_matrix(self, eigenvectors, k):
+        self.k = k
+        self.W = eigenvectors[:, :k]
