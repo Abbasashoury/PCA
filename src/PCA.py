@@ -24,3 +24,9 @@ class PCA:
     def projection_matrix(self, eigenvectors, k):
         self.k = k
         self.W = eigenvectors[:, :k]
+
+    def transform(self, B):
+        if self.W is None:
+            raise ValueError("Call projection_matrix first.")
+        T = B @ self.W
+        return T
