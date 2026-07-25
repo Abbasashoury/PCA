@@ -18,7 +18,7 @@ def main():
 
     print("\n=== Step 3:Covariance matrix ====")
     cov = Covariance()
-    C = cov.compute(B)
+    C = cov.computeCovariance(B)
     cov.check_symmetry(C)
     cov.get_shape(C)
 
