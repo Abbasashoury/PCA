@@ -18,7 +18,7 @@ class PCA:
         if self.cumulative_variance is None:
             raise ValueError("Call compute_variance first.")
         k = int(np.searchsorted(self.cumulative_variance, target) + 1)
-        print(f"Components need for {target * 100}% variance: {k}")
+        print(f"Components need for {target * 100:.0f}% variance: {k}")
         return k
 
     def projection_matrix(self, eigenvectors, k):

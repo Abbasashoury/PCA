@@ -21,4 +21,4 @@ class EigenSolver:
         max_diff = np.max(np.abs(product - identity))
         is_orthogonal = max_diff < telorance
         print(f"max W^T W - I: {max_diff}")
-        print(f"Orthogonal: {is_orthogonal}")
+        print(f"Orthogonal: {is_orthogonal:.2e}")
