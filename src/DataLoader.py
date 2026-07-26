@@ -20,8 +20,8 @@ class dataLoader:
         return self.X, self.t
 
     def get_info(self):
-        print("m (samples):", self.s)
-        print("n (features):", self.f)
+        print("s (samples):", self.s)
+        print("f (features):", self.f)
         print("X Shape:", self.X.shape)
-        print("y Shape:", self.t.shape)
+        print("t Shape:", self.t.shape)
         print("unique labels", np.unique(self.t))

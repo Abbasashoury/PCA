@@ -11,9 +11,9 @@ class Center:
         B = X - self.mean_vector  # centeralization
         return B
 
-    def verify_centering(self, B, telorance=1e-8):
+    def verify_centering(self, B, tolerance=1e-8):
         col_means = np.mean(B, axis=0)
         max_mean = np.max(np.abs(col_means))
-        is_centered = max_mean < telorance
-        print(f"max mean after centering: {max_mean:.2e}")
+        is_centered = max_mean < tolerance
+        print(f"Max |mean| after centering: {max_mean:.2e}")
         print(f"Centered: {is_centered}")
