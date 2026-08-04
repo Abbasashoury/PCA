@@ -13,7 +13,7 @@ class Visualizer:
     def plot_cumulative_var(self, cumulative_variance, target=0.90):
         plt.figure(figsize=(6, 4))
         plt.plot(range(1 , len(cumulative_variance) + 1) , cumulative_variance , marker="o", markersize=3)
-        plt.axhline(y=target * 100, color="r", linestyle="--", label=f"{target * 100:.0f}% variance")
+        plt.axhline(y=target , color="r", linestyle="--", label=f"{target * 100:.0f}% variance")
         plt.xlabel("Number of components")
         plt.ylabel("Cumulative explained variance")
         plt.title("Cumulative Explained Variance")
