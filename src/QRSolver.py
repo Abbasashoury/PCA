@@ -25,3 +25,13 @@ class QRSolver:
         print(f" Diagonal of R:{diag_R} ")
         print(f"Estimated rank: {rank} ")
         return rank
+
+    def run_small_example(self, size = 4 , num_iterations = 1 , seed = 0):
+        rng = np.random.default_rng(seed)
+        M = rng.standard_normal((size , size))
+        A = (M - M.T) / 2
+        A_new = self.qr_iteration(A, num_iterations = num_iterations)
+        self.test_similarity(A , A_new)
+        print("\nMatrix after QR iterations: ")
+        print(np.round(A_new , 4))
+        return A, A_new
