@@ -24,3 +24,4 @@ class QRSolver:
         rank = int(np.sum(diag_R > tol))
         print(f" Diagonal of R:{diag_R} ")
         print(f"Estimated rank: {rank} ")
+        return rank
