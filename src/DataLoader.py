@@ -1,5 +1,6 @@
 import numpy as np
 from sklearn.datasets import load_digits
+import matplotlib.pyplot as plt
 
 class dataLoader:
     """
@@ -25,3 +26,7 @@ class dataLoader:
         print("X Shape:", self.X.shape)
         print("t Shape:", self.t.shape)
         print("unique labels", np.unique(self.t))
+
+    def show_sample(self, index=0):
+        image = self.X[index].reshape(8, 8)
+        plt.imshow(image, cmap="gray")
