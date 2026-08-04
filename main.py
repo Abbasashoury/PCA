@@ -2,6 +2,7 @@ from src.DataLoader import dataLoader
 from src.Center import Center
 from src.Covariance import Covariance
 from src.EigenSolver import EigenSolver
+from src.QRSolver import QRSolver
 from src.PCA import PCA
 
 
@@ -21,6 +22,12 @@ def main():
     C = cov.computeCovariance(B)
     cov.check_symmetry(C)
     cov.get_shape(C)
+
+    print("\n=== Step 4: QR exercise ===")
+    qr = QRSolver()
+    qr.run_small_example()
+    qr.compute_rank_R(B)
+
 
     print("\n=== Step 5: Eigen decomposition ===")
     solver = EigenSolver()
