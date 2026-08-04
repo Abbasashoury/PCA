@@ -26,7 +26,7 @@ class QRSolver:
         print(f"Estimated rank: {rank} ")
         return rank
 
-    def run_small_example(self, size = 4 , num_iterations = 1 , seed = 0):
+    def run_small_example(self, size = 4 , num_iterations = 50 , seed = 0):
         rng = np.random.default_rng(seed)
         M = rng.standard_normal((size , size))
         A = (M + M.T) / 2
