@@ -29,3 +29,4 @@ class Visualizer:
         plt.ylabel("PC2")
         plt.title("2D PCA Projection")
         plt.grid(True)
+        plt.show()
