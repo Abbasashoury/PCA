@@ -11,7 +11,7 @@ def main():
     loader = dataLoader()
     X, t = loader.load()
     loader.get_info()
-
+    loader.show_sample()
     print("\n=== Step 2: Center data ===")
     center = Center()
     B = center.center(X)
