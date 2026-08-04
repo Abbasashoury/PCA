@@ -11,7 +11,7 @@ class QRSolver:
     def test_similarity(self, A_original, A_new):
 
         eig_orig = np.sort(np.linalg.eigvalsh(A_original))[::-1]
-        eig_new = np.sort(np.linalg.eigvalsh(A_new))
+        eig_new = np.sort(np.linalg.eigvalsh(A_new))[::-1]
         max_diff = np.max(np.abs(eig_orig - eig_new))
         print(f"Original eigenvalues:{eig_orig} ")
         print(f" New eigenvalues:    {eig_new} ")
