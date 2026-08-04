@@ -29,4 +29,8 @@ class dataLoader:
 
     def show_sample(self, index=0):
         image = self.X[index].reshape(8, 8)
+        plt.figure(figsize=(3, 3))
         plt.imshow(image, cmap="gray")
+        plt.title(f"Label: {self.y[index]}")
+        plt.axis("off")
+        plt.show()
