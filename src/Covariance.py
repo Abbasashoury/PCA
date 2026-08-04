@@ -10,8 +10,8 @@ class Covariance:
         C = (1.0 / (m - 1)) * (B.T @ B)
         return C
 
-    def check_symmetry(self, C, telorance=1e-8):
-        is_symmetric = np.allclose(C, C.T, atol=telorance)
+    def check_symmetry(self, C, tolerance=1e-8):
+        is_symmetric = np.allclose(C, C.T, atol=tolerance)
         print(f"Symmetric: {is_symmetric}")
 
     def get_shape(self, C):
