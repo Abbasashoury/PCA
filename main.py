@@ -50,6 +50,7 @@ def main():
     print("\n=== Step 8: 2D visualization ===")
     W2 = pca.projection_matrix(eigenvectors, k=2)
     T2 = pca.transform(B)
+    v.plot_2d_scatter(T2, t)
     print(f"T shape: {T2.shape}")
 
 
