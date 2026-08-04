@@ -12,7 +12,7 @@ class QRSolver:
 
         eig_orig = np.sort(np.linalg.eigvalsh(A_original))[::-1]
         eig_new = np.sort(np.linalg.eigvalsh(A_new))
-        max_diff = np.max((eig_orig - eig_new))
+        max_diff = np.max(np.abs(eig_orig - eig_new))
         print(f"Original eigenvalues:{eig_orig} ")
         print(f" New eigenvalues:    {eig_new} ")
         print(f" Max difference:{max_diff:.2e} ")
