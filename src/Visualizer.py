@@ -20,3 +20,12 @@ class Visualizer:
         plt.legend()
         plt.grid(True)
         plt.show()
+
+    def plot_2d_scatter(self, T2, y):
+        plt.figure(figsize=(7, 6))
+        scatter = plt.scatter(T2[:, 1], T2[:, 0], c=y, cmap="tab10", s=15)
+        plt.colorbar(scatter , label="Digit label")
+        plt.xlabel("PC1")
+        plt.ylabel("PC2")
+        plt.title("2D PCA Projection")
+        plt.grid(True)
