@@ -4,6 +4,7 @@ from src.Covariance import Covariance
 from src.EigenSolver import EigenSolver
 from src.QRSolver import QRSolver
 from src.PCA import PCA
+from src.Visualizer import Visualizer
 
 
 def main():
@@ -38,6 +39,8 @@ def main():
     pca = PCA(components=10)
     rel_variance, cum_variance = pca.compute_variance(eigenvalues)
     k90 = pca.find_k_component(target=0.90)
+    v = Visualizer()
+    v.plot_cumulative_variance(cum_variance)
 
     print("\n=== Step 7: Dimensionality reduction ===")
     W1 = pca.projection_matrix(eigenvectors, k=k90)
