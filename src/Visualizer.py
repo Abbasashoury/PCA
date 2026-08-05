@@ -39,3 +39,20 @@ class Visualizer:
         plt.title("Reconstruction Error vs k")
         plt.grid(True)
         plt.show()
+
+    def plot_reconstruction_comparison(self, X_orig, reconstructions, k_values, index = 1):
+        n_plots = len(k_values)
+        plt.figure(figsize=(3 * n_plots, 3))
+
+        plt.subplot(1, n_plots, 1)
+        plt.imshow(X_orig[index].reshape(8, 8), cmap="gray")
+        plt.title("Original")
+        plt.axis("off")
+        for i, (k, X_rec) in enumerate(zip( reconstructions,k_values )):
+            plt.subplot(1, n_plots, i)
+            plt.imshow(X_rec[index].reshape(8, 8), cmap="gray")
+            plt.title(f"k={k}")
+            plt.axis("off")
+
+        plt.tight_layout()
+        plt.show()
