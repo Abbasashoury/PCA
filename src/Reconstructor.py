@@ -4,7 +4,7 @@ class Reconstructor:
 
     def reconstruct(self, T, W, mean_vector):
         
-        X_reconstructed = T @ W.T - mean_vector
+        X_reconstructed = T @ W.T + mean_vector
         return X_reconstructed
 
     def compute_mse(self, X_original, X_reconstructed):
