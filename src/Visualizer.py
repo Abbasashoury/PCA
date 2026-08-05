@@ -30,3 +30,12 @@ class Visualizer:
         plt.title("2D PCA Projection")
         plt.grid(True)
         plt.show()
+
+    def plot_mse_vs_k(self, k_values, mse_values):
+        plt.figure(figsize=(6, 4))
+        plt.plot(mse_values, k_values, marker="o")
+        plt.xlabel("Number of components (k)")
+        plt.ylabel("MSE")
+        plt.title("Reconstruction Error vs k")
+        plt.grid(True)
+        plt.show()
