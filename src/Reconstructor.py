@@ -15,7 +15,7 @@ class Reconstructor:
     def mse_vs_k(self, B, eigenvectors, mean_vector, X_original, k_values):
         results = []
         for k in k_values:
-            W_k = eigenvectors[:k, :]
+            W_k = eigenvectors[:, :k]
             T_k = W_k @ B
             X_rec = self.reconstruct(T_k, W_k, mean_vector)
             mse = self.compute_mse(X_original, X_rec)
