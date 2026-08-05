@@ -40,7 +40,7 @@ class Visualizer:
         plt.grid(True)
         plt.show()
 
-    def plot_reconstruction_comparison(self, X_orig, reconstructions, k_values, index = 1):
+    def plot_reconstruction_comparison(self, X_orig, reconstructions, k_values, index = 0):
         n_plots = len(k_values)
         plt.figure(figsize=(3 * n_plots, 3))
 
