@@ -49,7 +49,7 @@ class Visualizer:
         plt.title("Original")
         plt.axis("off")
         for i, (k, X_rec) in enumerate(zip( reconstructions,k_values )):
-            plt.subplot(1, n_plots, i)
+            plt.subplot(1, n_plots, i + 2)
             plt.imshow(X_rec[index].reshape(8, 8), cmap="gray")
             plt.title(f"k={k}")
             plt.axis("off")
