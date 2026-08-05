@@ -19,5 +19,5 @@ class Reconstructor:
             T_k = B @ W_k
             X_rec = self.reconstruct(T_k, W_k, mean_vector)
             mse = self.compute_mse(X_original, X_rec)
-            results.append((mse,k))
+            results.append((k,mse))
         return results
