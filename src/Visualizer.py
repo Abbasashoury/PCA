@@ -41,7 +41,7 @@ class Visualizer:
         plt.show()
 
     def plot_reconstruction_comparison(self, X_orig, reconstructions, k_values, index = 0):
-        n_plots = len(k_values)
+        n_plots = len(k_values) + 1
         plt.figure(figsize=(3 * n_plots, 3))
 
         plt.subplot(1, n_plots, 1)
