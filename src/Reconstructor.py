@@ -1,3 +1,4 @@
 class Reconstructor:
-    def __init__(self):
-        pass
+
+    def reconstruct(self, T, W, mean_vector):
+        X_reconstructed = T @ W - mean_vector
