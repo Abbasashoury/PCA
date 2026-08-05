@@ -20,3 +20,4 @@ class Reconstructor:
             X_rec = self.reconstruct(T_k, W_k, mean_vector)
             mse = self.compute_mse(X_original, X_rec)
             results.append((mse,k))
+        return results
