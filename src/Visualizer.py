@@ -48,7 +48,7 @@ class Visualizer:
         plt.imshow(X_orig[index].reshape(8, 8), cmap="gray")
         plt.title("Original")
         plt.axis("off")
-        for i, (k, X_rec) in enumerate(zip( reconstructions,k_values )):
+        for i, (k, X_rec) in enumerate(zip(k_values ,reconstructions )):
             plt.subplot(1, n_plots, i + 2)
             plt.imshow(X_rec[index].reshape(8, 8), cmap="gray")
             plt.title(f"k={k}")
