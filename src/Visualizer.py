@@ -23,7 +23,7 @@ class Visualizer:
 
     def plot_2d_scatter(self, T2, y):
         plt.figure(figsize=(7, 6))
-        scatter = plt.scatter(T2[:, 1], T2[:, 0], c=y, cmap="tab10", s=15)
+        scatter = plt.scatter(T2[:, 0], T2[:, 1], c=y, cmap="tab10", s=15)
         plt.colorbar(scatter , label="Digit label")
         plt.xlabel("PC1")
         plt.ylabel("PC2")
