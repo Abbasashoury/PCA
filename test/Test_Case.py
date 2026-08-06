@@ -22,3 +22,9 @@ class SmallCaseAnalysis:
         eigenvalues, eigenvectors = solver.solve(C_small)
 
         return B_small, C_small, eigenvalues, eigenvectors
+
+    def analyze_eigenvalues(self, eigenvalues, tol=1e-8):
+        num_zero = int(np.sum((eigenvalues) < tol))
+        print(f"Number of (near) zero eigenvalues: {num_zero}")
+        print(f"Total eigenvalues: {len(eigenvalues)}")
+        return num_zero
