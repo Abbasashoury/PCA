@@ -28,3 +28,10 @@ class SmallCaseAnalysis:
         print(f"Number of (near) zero eigenvalues: {num_zero}")
         print(f"Total eigenvalues: {len(eigenvalues)}")
         return num_zero
+
+    def analyze_space(self, eigenvalues, tol=1e-8):
+        rank = int(np.sum((eigenvalues) > tol))
+        nullity = len(eigenvalues) - rank
+        print(f"rank(C): {rank}")
+        print(f"nullity(C): {nullity}")
+        return rank, nullity
