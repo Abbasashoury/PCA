@@ -30,7 +30,7 @@ class SmallCaseAnalysis:
         return num_zero
 
     def analyze_space(self, eigenvalues, tol=1e-8):
-        rank = int(np.sum((eigenvalues) > tol))
+        rank = int(np.sum(np.abs(eigenvalues) > tol))
         nullity = len(eigenvalues) - rank
         print(f"rank(C): {rank}")
         print(f"nullity(C): {nullity}")
