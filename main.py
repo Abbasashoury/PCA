@@ -42,7 +42,7 @@ def main():
     rel_variance, cum_variance = pca.compute_variance(eigenvalues)
     k90 = pca.find_k_component(target=0.90)
     visualizer = Visualizer()
-    visualizer.plot_cumulative_variance(cum_variance)
+    visualizer.plot_cumulative_var(cum_variance)
 
     print("\n=== Step 7: Dimensionality reduction ===")
     W1 = pca.projection_matrix(eigenvectors, k=k90)
