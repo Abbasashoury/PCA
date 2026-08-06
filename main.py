@@ -58,7 +58,7 @@ def main():
     print("\n=== Step 9: Reconstruction ===")
     reconstructor = Reconstructor()
     k_values = [2, 10, 30]
-    results = reconstructor.mse_vs_k(B, eigenvectors, Center.mean_vector, X , k_values)
+    results = reconstructor.mse_vs_k(B, eigenvectors, center.mean_vector, X , k_values)
     for k, mse in results:
         print(f"k={k}: MSE={mse:.4f}")
 
