@@ -9,7 +9,7 @@ class SmallCaseAnalysis:
         rng = np.random.default_rng( seed )
         indices = rng.choice(X.shape[0], size=num_samples, replace = False )
         X_small = X[indices]
-        return indices , X_small
+        return X_small , indices
 
     def run_pipeline(self, X_small):
         Center = ()
