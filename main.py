@@ -66,7 +66,7 @@ def main():
     for k in k_values:
         W_k = eigenvectors[:, :k]
         T_k = B @ W_k
-        X_rec = reconstructor.reconstruct(T_k, W_k, Center.mean_vector)
+        X_rec = reconstructor.reconstruct(T_k, W_k, center.mean_vector)
         reconstructions.append(X_rec)
 
     visualizer.plot_mse_vs_k([k for k, _ in results], [mse for _, mse in results])
