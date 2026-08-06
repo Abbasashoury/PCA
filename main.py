@@ -5,6 +5,8 @@ from src.EigenSolver import EigenSolver
 from src.QRSolver import QRSolver
 from src.PCA import PCA
 from src.Visualizer import Visualizer
+from src.Reconstructor import Reconstructor
+from src.Center import Center
 
 
 def main():
@@ -39,8 +41,8 @@ def main():
     pca = PCA(components=10)
     rel_variance, cum_variance = pca.compute_variance(eigenvalues)
     k90 = pca.find_k_component(target=0.90)
-    v = Visualizer()
-    v.plot_cumulative_variance(cum_variance)
+    visualizer = Visualizer()
+    visualizer.plot_cumulative_variance(cum_variance)
 
     print("\n=== Step 7: Dimensionality reduction ===")
     W1 = pca.projection_matrix(eigenvectors, k=k90)
@@ -50,9 +52,25 @@ def main():
     print("\n=== Step 8: 2D visualization ===")
     W2 = pca.projection_matrix(eigenvectors, k=2)
     T2 = pca.transform(B)
-    v.plot_2d_scatter(T2, t)
+    visualizer.plot_2d_scatter(T2, t)
     print(f"T shape: {T2.shape}")
 
+    print("\n=== Step 9: Reconstruction ===")
+    reconstructor = Reconstructor()
+    k_values = [2, 10, 30]
+    results = reconstructor.mse_vs_k(X, eigenvectors, Center.mean_vector, B, k_values)
+    for k, mse in results:
+        print(f"k={k}: MSE={mse:.4f}")
+
+    reconstructions = []
+    for k in k_values:
+        W_k = eigenvectors[:k, :k]
+        T_k = B @ W_k
+        X_rec = reconstructor.reconstruct(T_k, W_k, Center.mean_vector)
+        reconstructions.append(X_rec)
+    
+    visualizer.plot_mse_vs_k([k for k, _ in results], [mse for _, mse in results])
+    visualizer.plot_reconstruction_comparison(X, reconstructions, k_values)
 
 if __name__ == '__main__':
     main()
