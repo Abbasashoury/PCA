@@ -9,7 +9,7 @@ class Reconstructor:
 
     def compute_mse(self, X_original, X_reconstructed):
 
-        mse = np.mean(X_original - X_reconstructed ** 2)
+        mse = np.mean((X_original - X_reconstructed) ** 2)
         return mse
 
     def mse_vs_k(self, B, eigenvectors, mean_vector, X_original, k_values):
