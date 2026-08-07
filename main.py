@@ -6,6 +6,7 @@ from src.QRSolver import QRSolver
 from src.PCA import PCA
 from src.Visualizer import Visualizer
 from src.Reconstructor import Reconstructor
+from tests.Test_Case import SmallCaseAnalysis
 
 def main():
     print("=== Step 1: Load data ===")
