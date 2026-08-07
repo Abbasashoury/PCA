@@ -40,6 +40,7 @@ class Visualizer:
         plt.ylabel("MSE")
         plt.title("Reconstruction Error vs k")
         plt.grid(True)
+        plt.savefig("mse_vs_k.png")
         plt.show()
 
     def plot_reconstruction_comparison(self, X_orig, reconstructions, k_values, index = 0):
