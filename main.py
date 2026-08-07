@@ -8,12 +8,14 @@ from src.Visualizer import Visualizer
 from src.Reconstructor import Reconstructor
 from tests.Test_Case import SmallCaseAnalysis
 
+
 def main():
     print("=== Step 1: Load data ===")
     loader = dataLoader()
     X, t = loader.load()
     loader.get_info()
     loader.show_sample()
+
     print("\n=== Step 2: Center data ===")
     center = Center()
     B = center.center(X)
@@ -29,7 +31,6 @@ def main():
     qr = QRSolver()
     qr.run_small_example()
     qr.compute_rank_R(B)
-
 
     print("\n=== Step 5: Eigen decomposition ===")
     solver = EigenSolver()
@@ -57,7 +58,7 @@ def main():
     print("\n=== Step 9: Reconstruction ===")
     reconstructor = Reconstructor()
     k_values = [2, 10, 30]
-    results = reconstructor.mse_vs_k(B, eigenvectors, center.mean_vector, X , k_values)
+    results = reconstructor.mse_vs_k(B, eigenvectors, center.mean_vector, X, k_values)
     for k, mse in results:
         print(f"k={k}: MSE={mse:.4f}")
 
@@ -73,10 +74,11 @@ def main():
 
     print("\n=== Step 10: Small sample case (m < n) ===")
     analysis = SmallCaseAnalysis()
-    X_small, indices = analysis.random_samples(X, num_samples = 50)
+    X_small, indices = analysis.random_samples(X, num_samples=50)
     B_small, C_small, eig_small, vec_small = analysis.run_pipeline(X_small)
     analysis.analyze_eigenvalues(eig_small)
     analysis.analyze_space(eig_small)
+
 
 if __name__ == '__main__':
     main()

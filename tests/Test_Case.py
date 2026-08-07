@@ -2,14 +2,15 @@ import numpy as np
 from src.Center import Center
 from src.Covariance import Covariance
 from src.EigenSolver import EigenSolver
+
+
 class SmallCaseAnalysis:
 
-    def random_samples(self, X, num_samples = 50, seed = 0):
-
-        rng = np.random.default_rng( seed )
-        indices = rng.choice(X.shape[0], size=num_samples, replace = False )
+    def random_samples(self, X, num_samples=50, seed=0):
+        rng = np.random.default_rng(seed)
+        indices = rng.choice(X.shape[0], size=num_samples, replace=False)
         X_small = X[indices]
-        return X_small , indices
+        return X_small, indices
 
     def run_pipeline(self, X_small):
         center = Center()
