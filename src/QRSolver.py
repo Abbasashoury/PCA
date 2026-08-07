@@ -18,10 +18,10 @@ class QRSolver:
         print(f" Max difference:{max_diff:.2e} ")
         return max_diff
 
-    def compute_rank_R(self, B, tol=1e-10):
+    def compute_rank_R(self, B, tolerance=1e-10):
         Q, R = np.linalg.qr(B, mode="reduced")
         diag_R = np.abs(np.diag(R))
-        rank = int(np.sum(diag_R > tol))
+        rank = int(np.sum(diag_R > tolerance))
         print(f" Diagonal of R:{diag_R} ")
         print(f"Estimated rank: {rank} ")
         return rank

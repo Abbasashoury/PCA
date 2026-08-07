@@ -24,14 +24,14 @@ class SmallCaseAnalysis:
 
         return B_small, C_small, eigenvalues, eigenvectors
 
-    def analyze_eigenvalues(self, eigenvalues, tol=1e-8):
-        num_zero = int(np.sum(np.abs(eigenvalues) < tol))
+    def analyze_eigenvalues(self, eigenvalues, tolerance=1e-8):
+        num_zero = int(np.sum(np.abs(eigenvalues) < tolerance))
         print(f"Number of (near) zero eigenvalues: {num_zero}")
         print(f"Total eigenvalues: {len(eigenvalues)}")
         return num_zero
 
-    def analyze_space(self, eigenvalues, tol=1e-8):
-        rank = int(np.sum(np.abs(eigenvalues) >= tol))
+    def analyze_space(self, eigenvalues, tolerance=1e-8):
+        rank = int(np.sum(np.abs(eigenvalues) >= tolerance))
         nullity = len(eigenvalues) - rank
         print(f"rank(C): {rank}")
         print(f"nullity(C): {nullity}")
