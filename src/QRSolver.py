@@ -22,7 +22,7 @@ class QRSolver:
         Q, R = np.linalg.qr(B, mode="reduced")
         diag_R = np.abs(np.diag(R))
         rank = int(np.sum(diag_R > tolerance))
-        print(f" Diagonal of R:{diag_R} ")
+        print(f" Diagonal of R:\n{diag_R} ")
         print(f"Estimated rank: {rank} ")
         return rank
 
