@@ -76,7 +76,7 @@ def main():
     X_small, indices = analysis.random_samples(X, num_samples = 50)
     B_small, C_small, eig_small, vec_small = analysis.run_pipeline(X_small)
     analysis.analyze_eigenvalues(eig_small)
-    analysis.analyze_null_space(eig_small)
+    analysis.analyze_space(eig_small)
 
 if __name__ == '__main__':
     main()
