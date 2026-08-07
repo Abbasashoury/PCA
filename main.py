@@ -71,5 +71,12 @@ def main():
     visualizer.plot_mse_vs_k([k for k, _ in results], [mse for _, mse in results])
     visualizer.plot_reconstruction_comparison(X, reconstructions, k_values)
 
+    print("\n=== Step 10: Small sample case (m < n) ===")
+    analysis = SmallCaseAnalysis()
+    X_small, indices = analysis.random_samples(X, num_samples = 50)
+    B_small, C_small, eig_small, vec_small = analysis.run_pipeline(X_small)
+    analysis.analyze_zero_eigenvalues(eig_small)
+    analysis.analyze_null_space(eig_small)
+
 if __name__ == '__main__':
     main()
