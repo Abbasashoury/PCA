@@ -58,4 +58,5 @@ class Visualizer:
             plt.axis("off")
 
         plt.tight_layout()
+        plt.savefig("reconstruction_comparison.png")
         plt.show()
