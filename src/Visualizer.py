@@ -30,6 +30,7 @@ class Visualizer:
         plt.ylabel("PC2")
         plt.title("2D PCA Projection")
         plt.grid(True)
+        plt.savefig("scatter_2d.png")
         plt.show()
 
     def plot_mse_vs_k(self, k_values, mse_values):
