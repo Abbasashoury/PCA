@@ -19,6 +19,7 @@ class Visualizer:
         plt.title("Cumulative Explained Variance")
         plt.legend()
         plt.grid(True)
+        plt.savefig("cumulative_variance.png")
         plt.show()
 
     def plot_2d_scatter(self, T2, y):
