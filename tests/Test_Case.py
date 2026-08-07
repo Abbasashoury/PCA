@@ -12,8 +12,8 @@ class SmallCaseAnalysis:
         return X_small , indices
 
     def run_pipeline(self, X_small):
-        Center = ()
-        B_small = Center.center(X_small)
+        center = Center()
+        B_small = center.center(X_small)
 
         cov = Covariance()
         C_small = cov.compute(B_small)
