@@ -16,7 +16,7 @@ class SmallCaseAnalysis:
         B_small = center.center(X_small)
 
         cov = Covariance()
-        C_small = cov.compute(B_small)
+        C_small = cov.computeCovariance(B_small)
 
         solver = EigenSolver()
         eigenvalues, eigenvectors = solver.solve(C_small)
